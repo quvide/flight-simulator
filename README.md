@@ -1,4 +1,4 @@
-Calculates ans visualizes trajectories of high speed rounds. It considers
+Calculates and visualizes trajectories of high speed rounds using the Euler method. It considers
 * air density as a function of altitude
 * drag coefficient as a function of speed of air (which is a function of altitude)
 
