@@ -11,6 +11,8 @@ It doesn't consider:
 * libsdl_ttf
 
 ## Building and running
-1. place any font as font.ttf in the same folder as main.cpp
-2. run `g++ main.cpp -lSDL2 -lSDL2_ttf -o main`
-3. ./main [angle in deg] [mass in kg] [area in m²] [initial velocity in m/s]
+Place some font in the project root folder as font.ttf and then run
+```
+$ make
+$ ./bin/main
+```
