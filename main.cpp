@@ -128,12 +128,16 @@ void Arrow::step(double delta) {
 }
 
 int main (int argc, char **argv) {
-  if (argc != 2) {
-    cout << "Usage: ./main [angle]" << endl;
+  if (argc != 5) {
+    cout << "Usage: ./main [angle in deg] [mass in kg] [area in m²] [initial velocity in m/s]" << endl;
+    cout << "Example: ./main 50 14.8 0.008 2100" << endl;
     return 1;
   }
 
   double angle = std::stod(argv[1]);
+  double mass = std::stod(argv[2]);
+  double area = std::stod(argv[3]);
+  double velocity = std::stod(argv[4]);
 
   // initializing sdl...
   if (SDL_Init(SDL_INIT_VIDEO) != 0) {
@@ -141,7 +145,7 @@ int main (int argc, char **argv) {
     return 1;
   }
 
-  SDL_Window *win = SDL_CreateWindow("Flight Simulator - Panssaritorjunta Edition", 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_SHOWN);
+  SDL_Window *win = SDL_CreateWindow("Flight Simulator - High Velocity Rounds", 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_SHOWN);
 
   if (win == nullptr) {
     cout << SDL_GetError() << endl;
@@ -171,9 +175,6 @@ int main (int argc, char **argv) {
   SDL_Event e;
   SDL_Texture* text_texture;
 
-  double mass = 14.8;
-  double area = 0.008;
-  double velocity = 2100;
   Arrow arrow = Arrow(velocity, angle, mass, area);
   double t = 0.0;
 

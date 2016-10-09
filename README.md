@@ -12,6 +12,5 @@ It doesn't consider:
 
 ## Building and running
 1. place any font as font.ttf in the same folder as main.cpp
-2. change constants in the code (lines 1-10 and 174-176)
-3. run `g++ main.cpp -lSDL2 -lSDL2_ttf`
-4. ./main
+2. run `g++ main.cpp -lSDL2 -lSDL2_ttf -o main`
+3. ./main [angle in deg] [mass in kg] [area in m²] [initial velocity in m/s]
